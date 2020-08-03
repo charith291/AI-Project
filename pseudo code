@@ -1,0 +1,66 @@
+import cv2 
+importpytesseract
+importnumpy as np
+importmatplotlib.pyplot as plt
+
+fromkeras.models import Sequential
+fromkeras.layers import Dropout
+fromkeras.layers import Flatten 
+fromkeras.layers.convolutional import Conv2D
+fromkeras.layers.convolutional import MaxPooling2D
+fromkeras.layers.core import Dense, Activation, Dropout
+fromkeras.datasets import mnist
+fromkeras.optimizers import Adam
+fromkeras.utils import np_utils
+
+np.random.seed(9)
+
+def recognize(a):
+
+	nb_epoch = 1
+	num_classes = 10
+	batch_size = 128
+	train_size = 60000
+	test_size = 10000
+	v_length = 784
+	
+	(trainData, trainLabels), (testData, testLabels) = mnist.load_data()
+
+	trainData = trainData.reshape(train_size, v_length)
+	testData = testData.reshape(test_size, v_length)
+	trainData = trainData.astype("float32")
+	testData = testData.astype("float32")
+	trainData /= 255
+	testData /= 255
+	
+	mTrainLabels = np_utils.to_categorical(trainLabels, num_classes)
+	mTestLabels = np_utils.to_categorical(testLabels, num_classes)
+
+	pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+	custom_config = r'--oem 3 --psm 6'
+
+	img = cv2.imread(a)
+
+	mesage=pytesseract.image_to_string(img, config=custom_config)
+
+	model = Sequential()
+	model.add(Conv2D(32,(5,5),input_shape=(28,28,1),activation='relu'))
+	model.add(MaxPooling2D(pool_size=(2,2)))
+	model.add(Conv2D(16,(3,3),activation='relu'))
+	model.add(MaxPooling2D(pool_size=(2,2)))
+	model.add(Dropout(0,2))
+	model.add(Flatten())
+	model.add(Dense(128,activation='relu'))
+	model.add(Dense(50,activation='relu'))
+	model.add(Dense(num_classes,activation="softmax"))
+
+	model.compile(loss="categorical_crossentropy",optimizer="adam",metrics=["accuracy"])
+
+	trainData=trainData.reshape(-1,28,28,1)
+	testData=testData.reshape(-1,28,28,1)
+	test_images = testData[0:1]
+	test_images = test_images.reshape(test_images.shape[0], 28, 28)
+
+	masage = model.evaluate(testData, mTestLabels, verbose=0)
+
+	returnmesage
