@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUTPUT</title>
+<meta name="description" content="DESCIPTIONHERE" />
+<meta name="author" content="Codeconvey" />
+<!--Only for demo purpose - no need to add.-->
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/demo.css')}}" />
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+<header class="ScriptHeader">
+<div class="rt-container">
+<div class="col-rt-12">
+<div class="rt-heading">
+<h1>Handwritten Text Recognition</h1>
+<p>{{output}}</p>
+</div>
+</div>
+</div>
+</header>
+<section>
+<div class="rt-container">
+<div class="col-rt-12">
+<div class="Scriptcontent">
+<ul class="horizontal-accordion">
+<label for="one">
+<li class="item">
+<input checked type="radio" name="accordion" id="one">
+<div class="item--container">
+<header class="item--header">
+<span class="item--header--icon"><i class="fa fa-compass"></i></span>
+<h4 class="item--header--title"> Navigate to HomePage</h4>
+</header>
+<ul class="item--description">
+<li>Welcome to </li>
+<li>our project</li>
+<li>Handwritten</li>
+<li>Text</li>
+<li>Recognition</li>
+</ul>
+<footer class="item--footer">
+<a href="/"><i class="fa fa-angle-right"></i>Click Here</a>
+</footer>
+</div>
+</li>
+</label>
+<label for="two">
+<li class="item">
+<input type="radio" name="accordion" id="two">
+<div class="item--container">
+<header class="item--header">
+<span class="item--header--icon"><i class="fa fa-desktop"></i></span>
+<h4 class="item--header--title">Search in Web</h4>
+</header>
+<ul class="item--description">
+<li>Do you </li>
+<li>want to</li>
+<li>explore the</li>
+<li>phrases in </li>
+<li>recognized text ?</li>
+</ul>
+<footer class="item--footer">
+<a href="https://www.google.com"><i class="fa fa-angle-right"></i>Click Here</a>
+</footer>
+</div>
+</li>
+</label>
+<label for="three">
+<li class="item">
+<input type="radio" name="accordion" id="three">
+<div class="item--container">
+<header class="item--header">
+<span class="item--header--icon"><i class="fa fa-link"></i></span>
+<h4 class="item--header--title">save to clipboard </h4>
+</header>
+<ul class="item--description">
+<li>For the </li>
+<li>easy and fast</li>
+<li>way to copy the</li>
+<li>Recognized text to</li>
+<li>Clipboard</li>
+</ul>
+<footer class="item--footer">
+<a href="/coptext/"><i class="fa fa-angle-right"></i>Click Here</a>
+</footer>
+</div>
+</li>
+</label>
+<label for="four">
+<li class="item">
+<input type="radio" name="accordion" id="four">
+<div class="item--container">
+<header class="item--header">
+<span class="item--header--icon"><i class="fa fa-code"></i></span>
+<h4 class="item--header--title">save into text-file</h4>
+</header>
+<ul class="item--description">
+<li>For the future</li>
+<li>use,you can</li>
+<li>save the output</li>
+<li>into a </li>
+<li>Text File</li>
+</ul>
+<footer class="item--footer">
+<a href="/savfil/"><i class="fa fa-angle-right"></i>Click Here</a>
+</footer>
+</div>
+</li>
+</label>
+<label for="five">
+<li class="item">
+<input type="radio" name="accordion" id="five">
+<div class="item--container">
+<header class="item--header">
+<span class="item--header--icon"><i class="fa fa-mobile"></i></span>
+<h4 class="item--header--title">CONTACT US</h4>
+</header>
+<ul class="item--description">
+<li>Sujan</li>
+<li>7780511491</li>
+<li></li>
+<li>Supreet</li>
+<li>8978955255</li>
+</ul>
+<footer class="item--footer">
+<a href="https://mail.google.com/"><i class="fa fa-angle-right"></i>To open mail click here</a>
+</footer>
+</div>
+</li>
+</label>
+<footer class="item--footer">
+<a href="#"><i class="fa fa-angle-right"></i>En savoir plus</a>
+</footer>
+</div>
+</li>
+</label>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
+
