@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+body
+{
+background-color: red; 
+background-image: linear-gradient(to bottom,grey,black)
+}
+input[type=text]
+{
+width:50%;
+padding:10px;
+font-size:20px;
+border-radius:10px;
+border:none
+}
+input[type=button]{
+color:black;
+font-size: 15px;
+padding: 10px 15px;
+border: none;
+cursor: pointer;
+border-radius: 10px;
+text-align: center;
+}
+input[type=button]:hover
+{
+background-color:black;
+color: white;
+}
+input[type=text]:hover
+{
+border:black;
+}
+</style>
+<script>
+function redirect()
+{
+a=document.getElementById("t1").value;
+location.href = "http://127.0.0.1:5000/out/?input="+a;
+}
+function xyz()
+{
+document.getElementById("t1").value="";
+}
+</script>
+</head>
+<body>
+<center><br /><br /><br /><br /><br />
+<input type="text" id="t1"/><br /><br />
+<input type="Button" id="b2" value="CLEAR" onclick="xyz()"/>
+<input type="Button" id="b1" value="CONVERT TO TEXT" onclick="redirect()"/>
+</center>
+</body>
+</html>
